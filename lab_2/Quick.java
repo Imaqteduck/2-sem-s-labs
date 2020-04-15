@@ -9,16 +9,16 @@ public class Quick {
      *  all bad bed bug dad ... yes yet zoo
      *
      *End*/
-    public static void sort(Comparable[] a) {
+    public static void sortQuick(Comparable[] a) {
         StdRandom.shuffle(a);
-        sort(a, 0, a.length - 1);
+        sortQuick(a, 0, a.length - 1);
         //assert isSorted(a);
     }
-    private static void sort(Comparable[] a, int lo, int hi) {
+    private static void sortQuick(Comparable[] a, int lo, int hi) {
         if (hi <= lo) return;
         int j = partition(a, lo, hi);
-        sort(a, lo, j-1);
-        sort(a, j+1, hi);
+        sortQuick(a, lo, j-1);
+        sortQuick(a, j+1, hi);
         assert isSorted(a, lo, hi);
     }
     private static int partition(Comparable[] a, int lo, int hi) {
