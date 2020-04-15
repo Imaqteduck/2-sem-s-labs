@@ -29,7 +29,7 @@ public class CycleQueue<Item> implements Iterable<Item>{
 
     public void push(Item item) {
         if (n >= size) {
-            System.out.println("Push error: queue is full!");
+            StdOut.println("Push error: queue is full!");
             return;
         }
         array[end] = item;
@@ -64,23 +64,23 @@ public class CycleQueue<Item> implements Iterable<Item>{
         for (int i = 0; i < size; i++) {
             if (i==start) start_marker = count_chars;
             if (array[i] == null) {
-                if (i==end) System.out.print("[*] ");
-                else System.out.print("[ ] ");
+                if (i==end) StdOut.print("[*] ");
+                else StdOut.print("[ ] ");
                 count_chars += 4;
             } else {
                 item = array[i].toString();
-                System.out.print("[" + item + "]" + " ");
+                StdOut.print("[" + item + "]" + " ");
                 count_chars += item.length() + 3;
             }
         }
-        System.out.println();
+        StdOut.println();
         if (!isEmpty()) {
             if (start==0) start_marker = 1;
 
             char[] gabs = new char[start_marker];
             Arrays.fill(gabs, ' ');
-            System.out.print(gabs);
-            System.out.println("^");
+            StdOut.print(gabs);
+            StdOut.println("^");
         }
     }
 
