@@ -1,18 +1,18 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class LinkedQueue<Item> implements Iterable<Item> {
+public class LinkedQ<Item> implements Iterable<Item> {
     private int n;
     private int size;
     private Node first;
     private Node last;
 
-    public LinkedQueue(int size) {
+    public LinkedQ(int size) {
         n = 0;
         this.size = size;
     }
 
-    private class LinkedQueueIterator implements Iterator<Item> {
+    private class LinkedQIterator implements Iterator<Item> {
         Node node = first;
         boolean has_next = true;
         @Override
@@ -31,7 +31,7 @@ public class LinkedQueue<Item> implements Iterable<Item> {
 
     @Override
     public Iterator<Item> iterator() {
-        return new LinkedQueueIterator();
+        return new LinkedQIterator();
     }
 
     private class Node {
