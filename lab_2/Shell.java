@@ -9,7 +9,7 @@ public class Shell {
      * h=4;
      * h=1;
      * */
-    public static void sort(Comparable[] a) {
+    public static void sortShell(Comparable[] a) {
         int N = a.length;
         int h = 1;
         while (h < N/3) h = 3*h + 1;
