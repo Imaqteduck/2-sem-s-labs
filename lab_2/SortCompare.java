@@ -1,11 +1,11 @@
 public class SortCompare{
     public static double time(String alg, Double[] a){
         Stopwatch timer = new Stopwatch();
-        if (alg.equals("Selection"))    Selection.sort(a);
-        if (alg.equals("Insertion"))    Insertion.sort(a);
-        if (alg.equals("Merge"))        Merge.sort(a);
-        if (alg.equals("Quick"))        Quick.sort(a);
-        if (alg.equals("Shell"))        Shell.sort(a);
+        if (alg.equals("Selection"))    Selection.sortSelection(a);
+        if (alg.equals("Insertion"))    Insertion.sortInsertion(a);
+        if (alg.equals("Merge"))        Merge.sortMerge(a);
+        if (alg.equals("Quick"))        Quick.sortQuick(a);
+        if (alg.equals("Shell"))        Shell.sortShell(a);
         return timer.elapsedTime();
     }
     public static double timeRandomInput(String alg, int N, int T){
@@ -27,7 +27,7 @@ public class SortCompare{
         String alg_4="Quick";
         String alg_5="Shell";
         int N=30000;
-        int T=1;
+        int T=10;
         double t1 = timeRandomInput(alg_1,N,T);
         double t2 = timeRandomInput(alg_2,N,T);
         double t3 = timeRandomInput(alg_3,N,T);
