@@ -2,14 +2,14 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class CycleQueue<Item> implements Iterable<Item>{
+public class CycleQ<Item> implements Iterable<Item>{
     private int size;
     private int n;
     private Item[] array;
     private int start;
     private int end;
 
-    public CycleQueue(int size) {
+    public CycleQ(int size) {
         this.size = size;
         n = 0;
         array = (Item[]) new Object[size];
@@ -89,7 +89,7 @@ public class CycleQueue<Item> implements Iterable<Item>{
         return null;
     }
 
-    private class CycleQueueIterator implements Iterator {
+    private class CycleQIterator implements Iterator {
         int i = 0;
         @Override
         public boolean hasNext() {
